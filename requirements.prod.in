@@ -1,0 +1,13 @@
+# Main prod requirements
+
+# To generate requirements file, run:
+# pip-compile --generate-hashes --output-file=requirements.prod.txt requirements.prod.in
+
+click
+dvc
+jupyterlab
+opensafely-pipeline @ git+https://github.com/opensafely-core/pipeline@v0.2.0
+pandas
+pyarrow
+SQLAlchemy
+structlog
