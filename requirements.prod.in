@@ -6,6 +6,7 @@
 click
 dvc
 jupyterlab
+matplotlib
 opensafely-pipeline @ git+https://github.com/opensafely-core/pipeline@v0.2.0
 pandas
 pyarrow
