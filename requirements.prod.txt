@@ -14,6 +14,8 @@ aiohttp-retry==2.8.3
     #   dvc-http
 aiosignal==1.2.0
     # via aiohttp
+altair==4.2.0
+    # via -r requirements.prod.in
 amqp==5.1.1
     # via kombu
 antlr4-python3-runtime==4.9.3
@@ -131,6 +133,7 @@ dvclive==0.10.0
     # via dvc
 entrypoints==0.4
     # via
+    #   altair
     #   jupyter-client
     #   nbconvert
 executing==0.10.0
@@ -195,6 +198,7 @@ jedi==0.18.1
     # via ipython
 jinja2==3.1.2
     # via
+    #   altair
     #   jupyter-server
     #   jupyterlab
     #   jupyterlab-server
@@ -205,6 +209,7 @@ json5==0.9.10
     # via jupyterlab-server
 jsonschema==4.13.0
     # via
+    #   altair
     #   jupyterlab-server
     #   nbformat
 jupyter-client==7.3.4
@@ -292,6 +297,7 @@ notebook-shim==0.1.0
     # via nbclassic
 numpy==1.23.2
     # via
+    #   altair
     #   matplotlib
     #   pandas
     #   pyarrow
@@ -310,7 +316,9 @@ packaging==21.3
     #   matplotlib
     #   nbconvert
 pandas==1.4.3
-    # via -r requirements.prod.in
+    # via
+    #   -r requirements.prod.in
+    #   altair
 pandocfilters==1.5.0
     # via nbconvert
 parso==0.8.3
@@ -455,6 +463,8 @@ tinycss2==1.1.1
     # via nbconvert
 tomlkit==0.11.4
     # via dvc
+toolz==0.12.0
+    # via altair
 tornado==6.2
     # via
     #   ipykernel
