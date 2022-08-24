@@ -54,5 +54,5 @@ stages:
       md5: 85b3aa5139482304b0f315b4d5e51d9b
       size: 2948690
     - path: notebooks/exploration.ipynb
-      md5: 66b81e0309c7fca36a0e944873afb235
-      size: 4358
+      md5: 9014ba272bb581976d2cb864455791ef
+      size: 6485
