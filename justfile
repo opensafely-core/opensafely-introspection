@@ -104,10 +104,10 @@ fix: devenv
     $BIN/black .
     $BIN/isort .
 
-# run jupyter-lab
+# run jupyter
 run-jupyter *ARGS: prodenv
     #!/usr/bin/env bash
-    PYTHONPATH="$PYTHONPATH:$(pwd)" $BIN/jupyter-lab {{ ARGS }}
+    PYTHONPATH="$PYTHONPATH:$(pwd)" $BIN/jupyter {{ ARGS }}
 
 # run dvc
 run-dvc *ARGS: prodenv
