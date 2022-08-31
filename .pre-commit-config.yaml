@@ -33,3 +33,11 @@ repos:
       - id: check-toml
       - id: check-yaml
       - id: detect-private-key
+
+  - repo: local
+    hooks:
+      - id: clear-notebooks
+        name: Clear the output of Jupyter notebooks
+        language: system
+        entry: just run-jupyter nbconvert --clear-output
+        files: "\\.ipynb"
