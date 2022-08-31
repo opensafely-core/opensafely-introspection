@@ -14603,62 +14603,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>An <em>action</em> is an entry in a pipeline;
-it is executed in a job.
-An action's <code>id</code> is the entry's key.
-Keys are unique within pipelines but are not unique between pipelines;
-that is, keys are locally unique but not globally unique.
-Consequently, an action's primary key is a composite of <code>id</code> and <code>job_id</code>.</p>
-
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actions</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">pandas</span><span class="o">.</span><span class="n">read_feather</span><span class="p">(</span><span class="n">PROCESSED_DATA_DIR</span> <span class="o">/</span> <span class="s2">"actions.feather"</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"job_id"</span><span class="p">])</span>
-    <span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-<span class="p">)</span>
-<span class="k">assert</span> <span class="n">actions</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">is_unique</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>A <em>job</em> is an execution of an action.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">jobs</span> <span class="o">=</span> <span class="p">(</span>
@@ -14679,14 +14629,70 @@ Consequently, an action's primary key is a composite of <code>id</code> and <cod
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Markdown</span><span class="p">(</span>
     <span class="sa">f</span><span class="s2">"""</span>
-<span class="s2">There are </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">actions</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> actions and </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> jobs.</span>
+<span class="s2">There are </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> jobs.</span>
 <span class="s2">"""</span>
 <span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/markdown">
+<p>There are 38,204 jobs.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Analysis">Analysis<a class="anchor-link" href="#Analysis">&#182;</a></h2><p>How many times have actions of each type been run?</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">jobs</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"action_type"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="s2">"count"</span>
+<span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14708,10 +14714,84 @@ Consequently, an action's primary key is a composite of <code>id</code> and <cod
 
 
 
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/markdown">
-<p>There are 38,056 actions and 38,204 jobs.</p>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>action_type</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>r</th>
+      <td>22160</td>
+    </tr>
+    <tr>
+      <th>stata-mp</th>
+      <td>6415</td>
+    </tr>
+    <tr>
+      <th>cohortextractor</th>
+      <td>4797</td>
+    </tr>
+    <tr>
+      <th>python</th>
+      <td>2337</td>
+    </tr>
+    <tr>
+      <th>jupyter</th>
+      <td>1430</td>
+    </tr>
+    <tr>
+      <th>cohort-joiner</th>
+      <td>174</td>
+    </tr>
+    <tr>
+      <th>deciles-charts</th>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th>cohort-report</th>
+      <td>48</td>
+    </tr>
+    <tr>
+      <th>cohortextractor-v2</th>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>dataset-report</th>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>databuilder</th>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>cox-ipw</th>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -14727,27 +14807,9 @@ Consequently, an action's primary key is a composite of <code>id</code> and <cod
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Why isn't there a one-to-one relationship between actions and jobs?</p>
-<p>Some pipelines couldn't be parsed, so there are jobs that aren't associated with actions.
-This suggests there should be more jobs than actions.
-However, one job corresponds to one or more actions because the <code>run_all</code> action has been expanded.
-This suggests there should be more actions than jobs.</p>
-<hr>
-<p>An action's <code>pseudo_id</code> indicates whether the action was run explicitly (<code>pseudo_id == id</code>) or implicitly (<code>pseudo_id == "run_all"</code>).</p>
-<hr>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>A <em>workspace</em> is a collection of jobs.
-We consider a workspace to be a proxy for a study.</p>
+<p>We'd expect an action to be run more than once per workspace.
+However, how many times is a normal number of times?
+Are some types of action run more than other types of action per workspace?</p>
 
 </div>
 </div>
@@ -14760,7 +14822,9 @@ We consider a workspace to be a proxy for a study.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actions</span> <span class="o">=</span> <span class="n">actions</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">jobs</span><span class="o">.</span><span class="n">workspace_id</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">"job_id"</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_runs_per_workspace</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">jobs</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"workspace_id"</span><span class="p">,</span> <span class="s2">"action_id"</span><span class="p">,</span> <span class="s2">"action_type"</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">"count"</span><span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14776,7 +14840,7 @@ We consider a workspace to be a proxy for a study.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actions</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_runs_per_workspace</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"action_type"</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">([</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="nb">min</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -14817,287 +14881,12 @@ We consider a workspace to be a proxy for a study.</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th></th>
-      <th>pseudo_id</th>
-      <th>type</th>
-      <th>version</th>
-      <th>workspace_id</th>
-    </tr>
-    <tr>
-      <th>id</th>
-      <th>job_id</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="5" valign="top">000_covid</th>
-      <th>5627</th>
-      <td>000_covid</td>
-      <td>stata-mp</td>
-      <td>latest</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>5631</th>
-      <td>run_all</td>
-      <td>stata-mp</td>
-      <td>latest</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>5638</th>
-      <td>run_all</td>
-      <td>stata-mp</td>
-      <td>latest</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>5652</th>
-      <td>000_covid</td>
-      <td>stata-mp</td>
-      <td>latest</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>5668</th>
-      <td>000_covid</td>
-      <td>stata-mp</td>
-      <td>latest</td>
-      <td>17</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Analysis">Analysis<a class="anchor-link" href="#Analysis">&#182;</a></h2><p>How many times have actions of each type been run?</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actions</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"type"</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">"count"</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>count</th>
-    </tr>
-    <tr>
-      <th>type</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>r</th>
-      <td>22256</td>
-    </tr>
-    <tr>
-      <th>stata-mp</th>
-      <td>6607</td>
-    </tr>
-    <tr>
-      <th>cohortextractor</th>
-      <td>4926</td>
-    </tr>
-    <tr>
-      <th>python</th>
-      <td>2388</td>
-    </tr>
-    <tr>
-      <th>jupyter</th>
-      <td>1441</td>
-    </tr>
-    <tr>
-      <th>cohort-joiner</th>
-      <td>184</td>
-    </tr>
-    <tr>
-      <th>deciles-charts</th>
-      <td>143</td>
-    </tr>
-    <tr>
-      <th>cohort-report</th>
-      <td>50</td>
-    </tr>
-    <tr>
-      <th>cohortextractor-v2</th>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>dataset-report</th>
-      <td>17</td>
-    </tr>
-    <tr>
-      <th>databuilder</th>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>cox-ipw</th>
-      <td>5</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We'd expect an action to be run more than once per workspace.
-However, how many times is a normal number of times?
-Are some types of action run more than other types of action per workspace?</p>
-<p><code>id</code>s are unique within workspaces but are not unique between workspaces,
-so we group by <code>workspace_id</code> and <code>id</code>.
-For convenience, we also group by <code>type</code>.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_runs_per_workspace</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">actions</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"workspace_id"</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">,</span> <span class="s2">"type"</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">"count"</span><span class="p">)</span>
-<span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_runs_per_workspace</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"type"</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">([</span><span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="nb">min</span><span class="p">])</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
       <th>mean</th>
       <th>max</th>
       <th>min</th>
     </tr>
     <tr>
-      <th>type</th>
+      <th>action_type</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15106,19 +14895,19 @@ For convenience, we also group by <code>type</code>.</p>
   <tbody>
     <tr>
       <th>cohort-joiner</th>
-      <td>6.133333</td>
+      <td>5.800000</td>
       <td>20</td>
       <td>1</td>
     </tr>
     <tr>
       <th>cohort-report</th>
-      <td>4.545455</td>
-      <td>11</td>
+      <td>4.363636</td>
+      <td>10</td>
       <td>1</td>
     </tr>
     <tr>
       <th>cohortextractor</th>
-      <td>4.302183</td>
+      <td>4.193182</td>
       <td>82</td>
       <td>1</td>
     </tr>
@@ -15136,9 +14925,9 @@ For convenience, we also group by <code>type</code>.</p>
     </tr>
     <tr>
       <th>databuilder</th>
-      <td>14.000000</td>
-      <td>14</td>
-      <td>14</td>
+      <td>13.000000</td>
+      <td>13</td>
+      <td>13</td>
     </tr>
     <tr>
       <th>dataset-report</th>
@@ -15148,248 +14937,33 @@ For convenience, we also group by <code>type</code>.</p>
     </tr>
     <tr>
       <th>deciles-charts</th>
-      <td>1.521277</td>
-      <td>15</td>
+      <td>1.489362</td>
+      <td>13</td>
       <td>1</td>
     </tr>
     <tr>
       <th>jupyter</th>
-      <td>12.211864</td>
+      <td>12.118644</td>
       <td>116</td>
       <td>1</td>
     </tr>
     <tr>
       <th>python</th>
-      <td>4.174825</td>
+      <td>4.085664</td>
       <td>35</td>
       <td>1</td>
     </tr>
     <tr>
       <th>r</th>
-      <td>4.256263</td>
+      <td>4.237904</td>
       <td>136</td>
       <td>1</td>
     </tr>
     <tr>
       <th>stata-mp</th>
-      <td>3.321770</td>
+      <td>3.344630</td>
       <td>56</td>
       <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p><code>id</code>s are unique within workspaces</p>
-</blockquote>
-<p>They're <em>mostly</em> unique within workspaces.
-In some cases, an <code>id</code> has been recycled;
-in these cases,
-the the action has switched between types.
-We'd need to do more analysis to understand the direction, though.</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_duplicated</span> <span class="o">=</span> <span class="n">num_runs_per_workspace</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span>
-    <span class="p">[</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"workspace_id"</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="kc">False</span>
-<span class="p">)</span>
-<span class="n">num_runs_per_workspace</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">is_duplicated</span><span class="p">]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span>
-    <span class="p">[</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"workspace_id"</span><span class="p">,</span> <span class="s2">"type"</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th></th>
-      <th>count</th>
-    </tr>
-    <tr>
-      <th>id</th>
-      <th>workspace_id</th>
-      <th>type</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="2" valign="top">check_EGFR</th>
-      <th rowspan="2" valign="top">183</th>
-      <th>jupyter</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>python</th>
-      <td>13</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">generate_charts</th>
-      <th rowspan="2" valign="top">158</th>
-      <th>jupyter</th>
-      <td>30</td>
-    </tr>
-    <tr>
-      <th>python</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">generate_measures</th>
-      <th rowspan="2" valign="top">142</th>
-      <th>cohortextractor</th>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>python</th>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">generate_report</th>
-      <th rowspan="2" valign="top">28</th>
-      <th>cohort-report</th>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>jupyter</th>
-      <td>49</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">generate_report_bmi</th>
-      <th rowspan="2" valign="top">351</th>
-      <th>jupyter</th>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>python</th>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">generate_report_height_weight</th>
-      <th rowspan="2" valign="top">351</th>
-      <th>jupyter</th>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>python</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">generate_results</th>
-      <th rowspan="2" valign="top">90</th>
-      <th>jupyter</th>
-      <td>15</td>
-    </tr>
-    <tr>
-      <th>python</th>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">initial_counts</th>
-      <th rowspan="2" valign="top">172</th>
-      <th>r</th>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>stata-mp</th>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">plot_measure_deciles</th>
-      <th rowspan="2" valign="top">169</th>
-      <th>jupyter</th>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>python</th>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">run_model</th>
-      <th rowspan="2" valign="top">16</th>
-      <th>r</th>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>stata-mp</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">split_codelist</th>
-      <th rowspan="2" valign="top">172</th>
-      <th>r</th>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>stata-mp</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">test_indicator_g</th>
-      <th rowspan="2" valign="top">183</th>
-      <th>jupyter</th>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>python</th>
-      <td>6</td>
     </tr>
   </tbody>
 </table>

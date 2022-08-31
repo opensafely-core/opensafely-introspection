@@ -1,31 +1,21 @@
 stages:
-  jobs_actions:
-    cmd: python -m src.data.jobs_actions sqlite+pysqlite:///data/raw/job-server.db
-      data/interim/jobs.csv data/interim/actions.csv
+  extract_jobs:
+    cmd: python -m src.data.extract_jobs sqlite+pysqlite:///data/raw/job-server.db
+      data/interim/jobs.csv
     deps:
     - data/raw/job-server.db
-    - src/data/jobs_actions.py
+    - src/data/extract_jobs.py
     outs:
-    - data/interim/actions.csv
     - data/interim/jobs.csv
-  jobs:
-    cmd: python -m src.data.jobs data/interim/jobs.csv data/processed/jobs.feather
+  transform_jobs:
+    cmd: python -m src.data.transform_jobs data/interim/jobs.csv data/processed/jobs.feather
     deps:
     - data/interim/jobs.csv
-    - src/data/jobs.py
+    - src/data/transform_jobs.py
     outs:
     - data/processed/jobs.feather
-  actions:
-    cmd: python -m src.data.actions data/interim/actions.csv data/processed/actions.feather
-    deps:
-    - data/interim/actions.csv
-    - src/data/actions.py
-    outs:
-    - data/processed/actions.feather
   nbconvert:
-    cmd: PYTHONPATH=:/Users/iaindillingham/Code/iaindillingham/opensafely-introspection
-      jupyter nbconvert --execute --to=html --output-dir=reports notebooks/exploration.ipynb
+    cmd: just run-jupyter nbconvert --execute --to=html --output-dir=reports notebooks/exploration.ipynb
     deps:
-    - data/processed/actions.feather
     - data/processed/jobs.feather
     - notebooks/exploration.ipynb
