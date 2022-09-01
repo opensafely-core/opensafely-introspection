@@ -14624,6 +14624,37 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Nomenclature">Nomenclature<a class="anchor-link" href="#Nomenclature">&#182;</a></h2><p>A <strong><em>job</em></strong> is the execution of an action.
+An <strong><em>action</em></strong> is a stage in a pipeline.
+One job is associated with zero or one actions
+(zero, because of missing pipelines and parsing errors).
+Hence, an action is a concrete concept:
+whilst action <code>a</code> associated with job <code>j1</code> may have the same invocation as action <code>a</code> associated with job <code>j2</code>,
+<code>a-j1</code> and <code>a-j2</code> are different actions.</p>
+<p>A <strong><em>workspace</em></strong> is a collection of jobs and, hence, a collection of actions;
+it is a proxy for a study.</p>
+<p>We could assume that actions with the same ID that are associated with the same workspace are different executions of the same invocation.
+However, we should be cautious because both IDs and invocations may change.
+For example:</p>
+<ul>
+<li><p>the same ID may have different invocations,
+  such as when a jupyter action type is changed to a python action type.</p>
+</li>
+<li><p>the same invocation may have different IDs,
+  such as when a more general ID is replaced by a more specific ID, as more actions are added to a pipeline.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14677,7 +14708,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Analysis">Analysis<a class="anchor-link" href="#Analysis">&#182;</a></h2><p>How many times have actions of each type been run?</p>
+<h2 id="Analysis">Analysis<a class="anchor-link" href="#Analysis">&#182;</a></h2><p>How many times have actions of each type been executed?</p>
 
 </div>
 </div>
@@ -14807,9 +14838,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We'd expect an action to be run more than once per workspace.
+<p>Recognising the need to be cautious,
+we'd expect actions with the same ID that are associated with the same workspace to be executed more than once per workspace.
 However, how many times is a normal number of times?
-Are some types of action run more than other types of action per workspace?</p>
+Are some types of action executed more than other types of action?</p>
 
 </div>
 </div>
@@ -14963,6 +14995,212 @@ Are some types of action run more than other types of action per workspace?</p>
       <th>stata-mp</th>
       <td>3.344630</td>
       <td>56</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In which cases do actions with the same ID that are associated with the same workspace have different invocations?</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_runs_per_workspace</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="n">num_runs_per_workspace</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span>
+        <span class="p">[</span><span class="s2">"workspace_id"</span><span class="p">,</span> <span class="s2">"action_id"</span><span class="p">],</span>
+        <span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">]</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">"workspace_id"</span><span class="p">,</span> <span class="s2">"action_id"</span><span class="p">,</span> <span class="s2">"action_type"</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>workspace_id</th>
+      <th>action_id</th>
+      <th>action_type</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">16</th>
+      <th rowspan="2" valign="top">run_model</th>
+      <th>r</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>stata-mp</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">28</th>
+      <th rowspan="2" valign="top">generate_report</th>
+      <th>cohort-report</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>jupyter</th>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">90</th>
+      <th rowspan="2" valign="top">generate_results</th>
+      <th>jupyter</th>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>python</th>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">142</th>
+      <th rowspan="2" valign="top">generate_measures</th>
+      <th>cohortextractor</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>python</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">158</th>
+      <th rowspan="2" valign="top">generate_charts</th>
+      <th>jupyter</th>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>python</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">169</th>
+      <th rowspan="2" valign="top">plot_measure_deciles</th>
+      <th>jupyter</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>python</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">172</th>
+      <th rowspan="2" valign="top">initial_counts</th>
+      <th>r</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>stata-mp</th>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">split_codelist</th>
+      <th>r</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>stata-mp</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">183</th>
+      <th rowspan="2" valign="top">check_EGFR</th>
+      <th>jupyter</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>python</th>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">test_indicator_g</th>
+      <th>jupyter</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>python</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">351</th>
+      <th rowspan="2" valign="top">generate_report_bmi</th>
+      <th>jupyter</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>python</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">generate_report_height_weight</th>
+      <th>jupyter</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>python</th>
       <td>1</td>
     </tr>
   </tbody>
