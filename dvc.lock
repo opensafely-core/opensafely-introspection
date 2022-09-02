@@ -21,12 +21,12 @@ stages:
       md5: b2cb1ec364a45e4c0296c563f22164f4
       size: 8214784
     - path: src/data/transform_jobs.py
-      md5: a0c4b3ee81a92050af6be3d728e7f250
-      size: 290
+      md5: 783680f84a9b32652f0683c4f13332c5
+      size: 596
     outs:
     - path: data/processed/jobs.feather
-      md5: 9aa452fe651d7dbf3e73ce9474429eae
-      size: 3633490
+      md5: 4238c1a1b6bfee340bbded0bdf0c51fd
+      size: 2931650
   nbconvert:
     cmd: just run-jupyter nbconvert --execute --to=html --output-dir=reports notebooks/exploration.ipynb
     deps:
