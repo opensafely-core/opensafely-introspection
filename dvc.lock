@@ -31,8 +31,8 @@ stages:
     cmd: just run-jupyter nbconvert --execute --to=html --output-dir=reports notebooks/exploration.ipynb
     deps:
     - path: data/processed/jobs.feather
-      md5: 9aa452fe651d7dbf3e73ce9474429eae
-      size: 3633490
+      md5: 4238c1a1b6bfee340bbded0bdf0c51fd
+      size: 2931650
     - path: notebooks/exploration.ipynb
-      md5: 1a9aff89e3de3848a2c762fa6dfa49c4
-      size: 5131
+      md5: 2acaa58349c0a258034dc953bb6fd092
+      size: 5309
