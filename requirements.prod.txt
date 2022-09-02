@@ -50,7 +50,9 @@ attrs==22.1.0
     #   aiohttp
     #   jsonschema
 babel==2.10.3
-    # via jupyterlab-server
+    # via
+    #   jupyterlab-server
+    #   jupyterlab-spellchecker
 backcall==0.2.0
     # via ipython
 beautifulsoup4==4.11.1
@@ -235,11 +237,15 @@ jupyter-server==1.18.1
     #   nbclassic
     #   notebook-shim
 jupyterlab==3.4.5
-    # via -r requirements.prod.in
+    # via
+    #   -r requirements.prod.in
+    #   jupyterlab-spellchecker
 jupyterlab-pygments==0.2.2
     # via nbconvert
 jupyterlab-server==2.15.0
     # via jupyterlab
+jupyterlab-spellchecker==0.7.2
+    # via -r requirements.prod.in
 kiwisolver==1.4.4
     # via matplotlib
 kombu==5.2.4

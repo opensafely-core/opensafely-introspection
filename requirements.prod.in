@@ -7,6 +7,7 @@ altair
 click
 dvc
 jupyterlab
+jupyterlab-spellchecker
 matplotlib
 opensafely-pipeline @ git+https://github.com/opensafely-core/pipeline@v0.2.0
 pandas
