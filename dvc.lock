@@ -28,11 +28,12 @@ stages:
       md5: 4238c1a1b6bfee340bbded0bdf0c51fd
       size: 2931650
   nbconvert:
-    cmd: just run-jupyter nbconvert --execute --to=html --output-dir=reports notebooks/exploration.ipynb
+    cmd: just run-jupyter nbconvert --execute --to=html --output-dir=reports notebooks/*.ipynb
     deps:
     - path: data/processed/jobs.feather
       md5: 4238c1a1b6bfee340bbded0bdf0c51fd
       size: 2931650
-    - path: notebooks/exploration.ipynb
-      md5: 2acaa58349c0a258034dc953bb6fd092
-      size: 5309
+    - path: notebooks/
+      md5: f4869289dc92c77db58b2d12aca1c5d2.dir
+      size: 211211
+      nfiles: 4

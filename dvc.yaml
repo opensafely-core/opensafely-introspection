@@ -15,7 +15,7 @@ stages:
     outs:
     - data/processed/jobs.feather
   nbconvert:
-    cmd: just run-jupyter nbconvert --execute --to=html --output-dir=reports notebooks/exploration.ipynb
+    cmd: just run-jupyter nbconvert --execute --to=html --output-dir=reports notebooks/*.ipynb
     deps:
     - data/processed/jobs.feather
-    - notebooks/exploration.ipynb
+    - notebooks/
