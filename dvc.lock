@@ -34,6 +34,6 @@ stages:
       md5: 4238c1a1b6bfee340bbded0bdf0c51fd
       size: 2931650
     - path: notebooks/
-      md5: f4869289dc92c77db58b2d12aca1c5d2.dir
-      size: 211211
-      nfiles: 4
+      md5: 4e4d752ce667890e304695ad8410a370.dir
+      size: 214140
+      nfiles: 5
