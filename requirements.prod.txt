@@ -232,7 +232,7 @@ jupyter-server==1.18.1
     #   jupyterlab-server
     #   nbclassic
     #   notebook-shim
-jupyterlab==3.4.6
+jupyterlab==3.4.7
     # via
     #   -r requirements.prod.in
     #   jupyterlab-spellchecker
@@ -463,6 +463,8 @@ terminado==0.15.0
     #   notebook
 tinycss2==1.1.1
     # via nbconvert
+tomli==2.0.1
+    # via jupyterlab
 tomlkit==0.11.4
     # via dvc
 toolz==0.12.0
