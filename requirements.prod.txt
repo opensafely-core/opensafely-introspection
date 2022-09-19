@@ -91,6 +91,8 @@ commonmark==0.9.1
     # via rich
 configobj==5.0.6
     # via dvc
+contourpy==1.0.5
+    # via matplotlib
 cryptography==37.0.4
     # via asyncssh
 cycler==0.11.0
@@ -254,7 +256,7 @@ markupsafe==2.1.1
     # via
     #   jinja2
     #   nbconvert
-matplotlib==3.5.3
+matplotlib==3.6.0
     # via -r requirements.prod.in
 matplotlib-inline==0.1.6
     # via
@@ -300,6 +302,7 @@ notebook-shim==0.1.0
 numpy==1.23.2
     # via
     #   altair
+    #   contourpy
     #   matplotlib
     #   pandas
     #   pyarrow
