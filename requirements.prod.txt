@@ -234,7 +234,7 @@ jupyter-server==1.18.1
     #   jupyterlab-server
     #   nbclassic
     #   notebook-shim
-jupyterlab==3.4.8
+jupyterlab==3.5.0
     # via
     #   -r requirements.prod.in
     #   jupyterlab-spellchecker
