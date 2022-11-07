@@ -447,7 +447,7 @@ sniffio==1.2.0
     # via anyio
 soupsieve==2.3.2.post1
     # via beautifulsoup4
-sqlalchemy==1.4.42
+sqlalchemy==1.4.43
     # via -r requirements.prod.in
 stack-data==0.4.0
     # via ipython
