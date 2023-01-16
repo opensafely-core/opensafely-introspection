@@ -256,7 +256,7 @@ markupsafe==2.1.1
     # via
     #   jinja2
     #   nbconvert
-matplotlib==3.6.2
+matplotlib==3.6.3
     # via -r requirements.prod.in
 matplotlib-inline==0.1.6
     # via
@@ -425,6 +425,10 @@ send2trash==1.8.0
     #   jupyter-server
     #   nbclassic
     #   notebook
+setuptools==65.1.0
+    # via
+    #   ipython
+    #   zc-lockfile
 shortuuid==1.0.9
     # via
     #   dvc
@@ -525,9 +529,3 @@ yarl==1.8.1
     # via aiohttp
 zc-lockfile==2.0
     # via dvc
-
-# The following packages are considered to be unsafe in a requirements file:
-setuptools==65.1.0
-    # via
-    #   ipython
-    #   zc-lockfile
