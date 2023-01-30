@@ -451,7 +451,7 @@ sniffio==1.2.0
     # via anyio
 soupsieve==2.3.2.post1
     # via beautifulsoup4
-sqlalchemy==1.4.46
+sqlalchemy==2.0.0
     # via -r requirements.prod.in
 stack-data==0.4.0
     # via ipython
@@ -506,6 +506,7 @@ typing-extensions==4.3.0
     #   dvc
     #   dvc-objects
     #   pydantic
+    #   sqlalchemy
 urllib3==1.26.11
     # via
     #   dulwich
