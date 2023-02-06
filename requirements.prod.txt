@@ -425,10 +425,6 @@ send2trash==1.8.0
     #   jupyter-server
     #   nbclassic
     #   notebook
-setuptools==65.1.0
-    # via
-    #   ipython
-    #   zc-lockfile
 shortuuid==1.0.9
     # via
     #   dvc
@@ -451,7 +447,7 @@ sniffio==1.2.0
     # via anyio
 soupsieve==2.3.2.post1
     # via beautifulsoup4
-sqlalchemy==2.0.0
+sqlalchemy==2.0.1
     # via -r requirements.prod.in
 stack-data==0.4.0
     # via ipython
