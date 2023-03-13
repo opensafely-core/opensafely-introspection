@@ -11,7 +11,6 @@ asttokens==2.0.8
 attrs==22.1.0
     # via
     #   -c requirements.prod.txt
-    #   flake8-implicit-str-concat
     #   pytest
 backcall==0.2.0
     # via
@@ -51,7 +50,7 @@ flake8==6.0.0
     #   flake8-no-pep420
 flake8-builtins==1.5.3
     # via -r requirements.dev.in
-flake8-implicit-str-concat==0.3.0
+flake8-implicit-str-concat==0.4.0
     # via -r requirements.dev.in
 flake8-no-pep420==2.3.0
     # via -r requirements.dev.in
@@ -76,8 +75,6 @@ matplotlib-inline==0.1.6
     #   ipython
 mccabe==0.7.0
     # via flake8
-more-itertools==8.14.0
-    # via flake8-implicit-str-concat
 mypy-extensions==0.4.3
     # via black
 nodeenv==1.7.0
