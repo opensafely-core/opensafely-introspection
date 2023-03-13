@@ -129,8 +129,6 @@ pure-eval==0.2.2
     # via
     #   -c requirements.prod.txt
     #   stack-data
-py==1.11.0
-    # via pytest
 pycodestyle==2.10.0
     # via flake8
 pyflakes==3.0.1
@@ -146,7 +144,7 @@ pyparsing==3.0.9
     #   packaging
 pyrepl==0.9.0
     # via fancycompleter
-pytest==7.1.2
+pytest==7.2.2
     # via
     #   -r requirements.dev.in
     #   pytest-cov
@@ -168,10 +166,6 @@ tokenize-rt==4.2.1
     # via black
 toml==0.10.2
     # via pre-commit
-tomli==2.0.1
-    # via
-    #   -c requirements.prod.txt
-    #   pytest
 traitlets==5.3.0
     # via
     #   -c requirements.prod.txt
