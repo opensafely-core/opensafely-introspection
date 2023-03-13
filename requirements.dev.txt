@@ -115,7 +115,7 @@ platformdirs==2.5.2
     #   virtualenv
 pluggy==1.0.0
     # via pytest
-pre-commit==2.20.0
+pre-commit==3.1.1
     # via -r requirements.dev.in
 prompt-toolkit==3.0.30
     # via
@@ -164,8 +164,6 @@ stack-data==0.4.0
     #   ipython
 tokenize-rt==4.2.1
     # via black
-toml==0.10.2
-    # via pre-commit
 traitlets==5.3.0
     # via
     #   -c requirements.prod.txt
