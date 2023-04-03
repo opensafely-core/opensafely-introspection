@@ -320,7 +320,7 @@ packaging==21.3
     #   jupyterlab-server
     #   matplotlib
     #   nbconvert
-pandas==1.5.3
+pandas==2.0.0
     # via
     #   -r requirements.prod.in
     #   altair
@@ -503,6 +503,8 @@ typing-extensions==4.3.0
     #   dvc-objects
     #   pydantic
     #   sqlalchemy
+tzdata==2023.3
+    # via pandas
 urllib3==1.26.11
     # via
     #   dulwich
