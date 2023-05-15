@@ -14,7 +14,7 @@ aiohttp-retry==2.8.3
     #   dvc-http
 aiosignal==1.2.0
     # via aiohttp
-altair==4.2.2
+altair==5.0.0
     # via -r requirements.prod.in
 amqp==5.1.1
     # via kombu
@@ -133,7 +133,6 @@ dvclive==0.10.0
     # via dvc
 entrypoints==0.4
     # via
-    #   altair
     #   jupyter-client
     #   nbconvert
 executing==0.10.0
