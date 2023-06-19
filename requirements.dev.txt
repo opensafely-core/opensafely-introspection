@@ -48,7 +48,7 @@ flake8-builtins==2.1.0
     # via -r requirements.dev.in
 flake8-implicit-str-concat==0.4.0
     # via -r requirements.dev.in
-flake8-no-pep420==2.4.0
+flake8-no-pep420==2.6.0
     # via -r requirements.dev.in
 identify==2.5.3
     # via pre-commit
