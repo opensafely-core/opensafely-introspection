@@ -39,7 +39,7 @@ fancycompleter==0.9.1
     # via pdbpp
 filelock==3.8.0
     # via virtualenv
-flake8==6.0.0
+flake8==6.1.0
     # via
     #   -r requirements.dev.in
     #   flake8-builtins
@@ -122,9 +122,9 @@ pure-eval==0.2.2
     # via
     #   -c requirements.prod.txt
     #   stack-data
-pycodestyle==2.10.0
+pycodestyle==2.11.0
     # via flake8
-pyflakes==3.0.1
+pyflakes==3.1.0
     # via flake8
 pygments==2.13.0
     # via
