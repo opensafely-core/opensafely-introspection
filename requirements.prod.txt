@@ -14,7 +14,7 @@ aiohttp-retry==2.8.3
     #   dvc-http
 aiosignal==1.2.0
     # via aiohttp
-altair==5.0.1
+altair==5.1.0
     # via -r requirements.prod.in
 amqp==5.1.1
     # via kombu
@@ -299,6 +299,7 @@ overrides==7.4.0
     # via jupyter-server
 packaging==21.3
     # via
+    #   altair
     #   dvc
     #   hydra-core
     #   ipykernel
