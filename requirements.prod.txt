@@ -308,7 +308,7 @@ packaging==21.3
     #   jupyterlab-server
     #   matplotlib
     #   nbconvert
-pandas==2.1.1
+pandas==2.1.2
     # via
     #   -r requirements.prod.in
     #   altair
@@ -416,6 +416,8 @@ ruamel-yaml==0.17.21
     # via
     #   dvc
     #   opensafely-pipeline
+ruamel-yaml-clib==0.2.8
+    # via ruamel-yaml
 scmrepo==0.0.25
     # via dvc
 send2trash==1.8.2
@@ -459,6 +461,8 @@ terminado==0.15.0
     #   jupyter-server-terminals
 tinycss2==1.1.1
     # via nbconvert
+tomli==2.0.1
+    # via jupyterlab
 tomlkit==0.11.4
     # via dvc
 toolz==0.12.0
@@ -489,6 +493,8 @@ traitlets==5.9.0
     #   nbformat
 typing-extensions==4.3.0
     # via
+    #   altair
+    #   async-lru
     #   asyncssh
     #   dvc
     #   dvc-objects
