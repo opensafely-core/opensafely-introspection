@@ -155,6 +155,7 @@ fsspec[http]==2022.7.1
     #   dvc
     #   dvc-http
     #   dvc-objects
+    #   fsspec
     #   scmrepo
 funcy==1.17
     # via
@@ -253,7 +254,7 @@ markupsafe==2.1.1
     # via
     #   jinja2
     #   nbconvert
-matplotlib==3.8.0
+matplotlib==3.8.1
     # via -r requirements.prod.in
 matplotlib-inline==0.1.6
     # via
