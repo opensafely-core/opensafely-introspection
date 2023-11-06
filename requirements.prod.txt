@@ -155,6 +155,7 @@ fsspec[http]==2022.7.1
     #   dvc
     #   dvc-http
     #   dvc-objects
+    #   fsspec
     #   scmrepo
 funcy==1.17
     # via
@@ -231,7 +232,7 @@ jupyter-server==2.7.2
     #   notebook-shim
 jupyter-server-terminals==0.4.4
     # via jupyter-server
-jupyterlab==4.0.7
+jupyterlab==4.0.8
     # via
     #   -r requirements.prod.in
     #   jupyterlab-spellchecker
