@@ -309,7 +309,7 @@ packaging==21.3
     #   jupyterlab-server
     #   matplotlib
     #   nbconvert
-pandas==2.1.2
+pandas==2.1.3
     # via
     #   -r requirements.prod.in
     #   altair
