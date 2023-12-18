@@ -346,7 +346,7 @@ ptyprocess==0.7.0
     #   terminado
 pure-eval==0.2.2
     # via stack-data
-pyarrow==14.0.1
+pyarrow==14.0.2
     # via -r requirements.prod.in
 pycparser==2.21
     # via cffi
