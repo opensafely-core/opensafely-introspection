@@ -450,7 +450,7 @@ sqlalchemy==2.0.24
     # via -r requirements.prod.in
 stack-data==0.4.0
     # via ipython
-structlog==23.2.0
+structlog==23.3.0
     # via -r requirements.prod.in
 tabulate==0.8.10
     # via
